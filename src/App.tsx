@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Space from "./Space/index";
+import "./App.css";
+import { ConfigProvider } from "./Space/ConfigProvider";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider space={{ size: 20 }}>
+      <Space direction="horizontal">
+        <div className="box"></div>
+        <div className="box"></div>
+        <div className="box"></div>
+      </Space>
+      <Space direction="vertical">
+        <div className="box"></div>
+        <div className="box"></div>
+        <div className="box"></div>
+      </Space>
+    </ConfigProvider>
   );
 }
-
-export default App;
